@@ -14,7 +14,7 @@ class Coin {
     }
 
     print(): string {
-        return `<a href="https://coinmarketcap.com/currencies/${this.id}/">${this.name}</a>(${this.symbol}) - ${this.price_thb}`
+        return `<a href="https://coinmarketcap.com/currencies/${this.id}/"><button type="button" class="btn btn-info">${this.name}</button></a> <br> ชื่อย่อ : ${this.symbol} <br> ราคา : ${this.price_thb}`
     }
  
 

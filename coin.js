@@ -6,7 +6,7 @@ var Coin = /** @class */ (function () {
         this.price_thb = coin.price_thb;
     }
     Coin.prototype.print = function () {
-        return "<a href=\"https://coinmarketcap.com/currencies/" + this.id + "/\">" + this.name + "</a>(" + this.symbol + ") - " + this.price_thb;
+        return "<a href=\"https://coinmarketcap.com/currencies/" + this.id + "/\"><button type=\"button\" class=\"btn btn-info\">" + this.name + "</button></a> <br> \u0E0A\u0E37\u0E48\u0E2D\u0E22\u0E48\u0E2D : " + this.symbol + " <br> \u0E23\u0E32\u0E04\u0E32 : " + this.price_thb;
     };
     return Coin;
 }());
@@ -16,7 +16,7 @@ function getCoins() {
     });
 }
 function addCoin(coin) {
-    var $coins = $('#coins')
+    var $coins = $('#coins');
     $coins.append("<li>" + coin.print() + " THB </li>");
 }
 function displayCoins(coins) {
