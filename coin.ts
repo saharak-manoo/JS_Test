@@ -14,7 +14,7 @@ class Coin {
     }
 
     print(): string {
-        return `<a href="https://coinmarketcap.com/currencies/${this.id}/"><button type="button" class="btn btn-info">${this.name}</button></a> <br> ชื่อย่อ : ${this.symbol} <br> ราคา : ${this.price_thb}`
+        return `<a href="https://coinmarketcap.com/currencies/${this.id}/"><button type="button" class="btn btn-info">${this.name}</button></a> <br> <h4> ชื่อย่อ : ${this.symbol}</h4>   <h4>ราคา : ${this.price_thb} THB</h4>`
     }
  
 
@@ -28,7 +28,7 @@ function getCoins() {
 
 function addCoin(coin: Coin): void {
     const $coins = $('#coins')
-    $coins.append(`<li>${coin.print()} THB </li>`)
+    $coins.append(`<li>${coin.print()}</li>`)
 }
 
 function displayCoins(coins: Coin[]): void {
