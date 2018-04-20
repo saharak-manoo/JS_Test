@@ -6,7 +6,7 @@ var Coin = /** @class */ (function () {
         this.price_thb = coin.price_thb;
     }
     Coin.prototype.print = function () {
-        return " <div class=\"alert alert-success\">\n        <strong><a href=\"https://coinmarketcap.com/currencies/" + this.id + "/\"><button type=\"button\" class=\"btn btn-info\">" + this.name + "</button></a></strong> <h4> \u0E0A\u0E37\u0E48\u0E2D\u0E22\u0E48\u0E2D : " + this.symbol + "</h4>   <h4>\u0E23\u0E32\u0E04\u0E32 : " + this.price_thb + " THB</h4>\n      </div>";
+        return " <div class=\"alert alert-info\">\n        <strong><h1><a href=\"https://coinmarketcap.com/currencies/" + this.id + "/\">" + this.name + "</a></h1></strong> <h4> \u0E0A\u0E37\u0E48\u0E2D\u0E22\u0E48\u0E2D : " + this.symbol + "  \u0E23\u0E32\u0E04\u0E32 : " + this.price_thb + " THB</h4>\n      </div>";
     };
     return Coin;
 }());
