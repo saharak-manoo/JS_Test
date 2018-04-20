@@ -1,12 +1,32 @@
-function getBears() {
+function getBeers() {
 
-	fetch("https://api.punkapi.com/v2/beers").then((resp) => {
+	return fetch("https://api.punkapi.com/v2/beers").then((resp) => {
 		return resp.json()
-	}).then((bears) => {
-		console.log(bears)
-		bears.forEach(bear) => {
-			addBear(bear)
-		}
-	});
+	})//.then((beers) => {
+	
+	// 	beers.forEach((beer) => {
+	// 		addBeer(beer)
+	// 	})
+	// })
+
 }
-getBears()
+function addBeer(beer){
+	const $beers = $('#beers')
+	$beers.append
+			("<li>"+ beer.name + "</li>")
+
+
+}
+
+function displayBeers(beers){
+	beers.forEach((beer) => {
+		addBeer(beer)
+	})
+}
+
+getBeers().then((beers) => {
+	displayBeers((beers))
+})
+
+// addBeer();
+// // getBears()
