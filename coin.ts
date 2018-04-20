@@ -1,0 +1,46 @@
+declare var $: any;
+
+class Coin {
+    id: number
+    name: string
+    symbol: string
+    price_thb: number
+
+    constructor(coin: {id: number, name: string, symbol: string, price_thb: number}) {
+        this.id =coin.id
+        this.name = coin.name
+        this.symbol = coin.symbol
+        this.price_thb =coin.price_thb
+    }
+
+    print(): string {
+        return `<a href="https://coinmarketcap.com/currencies/${this.id}/"><button type="button" class="btn btn-info">${this.name}</button></a> <br> <h4> ชื่อย่อ : ${this.symbol}</h4>   <h4>ราคา : ${this.price_thb} THB</h4>`
+    }
+ 
+
+}
+
+function getCoins() {
+    return fetch("https://api.coinmarketcap.com/v1/ticker/?convert=THB&limit=20").then((resp) => {
+        return resp.json()
+    })
+}
+
+function addCoin(coin: Coin): void {
+    const $coins = $('#coins')
+    $coins.append(`<li>${coin.print()}</li>`)
+}
+
+function displayCoins(coins: Coin[]): void {
+    coins.forEach(function (coin) {
+        addCoin(new Coin(coin))
+
+
+
+    })
+}
+
+getCoins().then((coins) => {
+    displayCoins((coins))
+})
+
