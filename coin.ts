@@ -1,22 +1,22 @@
-declare var $: any
+declare var $: any;
 
 class Coin {
+    id: number
     name: string
     symbol: string
     price_thb: number
 
-    constructor(coin: { name: string, symbol: string, price_thb: number}) {
+    constructor(coin: {id: number, name: string, symbol: string, price_thb: number}) {
+        this.id =coin.id
         this.name = coin.name
         this.symbol = coin.symbol
         this.price_thb =coin.price_thb
     }
 
     print(): string {
-        return `(${this.symbol}) - ${this.price_thb}`
+        return `<a href="https://coinmarketcap.com/currencies/${this.id}/">${this.name}</a>(${this.symbol}) - ${this.price_thb}`
     }
-    printname(): string {
-        return `${this.name}`
-    }
+ 
 
 }
 
@@ -28,12 +28,15 @@ function getCoins() {
 
 function addCoin(coin: Coin): void {
     const $coins = $('#coins')
-    $coins.append(`<li><a href="https://coinmarketcap.com/currencies/${coin.printname()}/"_target="blank">${coin.printname()}</a>${coin.print()} THB </li>`)
+    $coins.append(`<li>${coin.print()} THB </li>`)
 }
 
 function displayCoins(coins: Coin[]): void {
-    coins.forEach((coin) => {
-        addCoin(new Coin(coin)
+    coins.forEach(function (coin) {
+        addCoin(new Coin(coin))
+
+
+
     })
 }
 
