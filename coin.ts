@@ -6,20 +6,20 @@ class Coin {
     symbol: string
     price_thb: number
 
-    constructor(coin: {id: number, name: string, symbol: string, price_thb: number}) {
-        this.id =coin.id
+    constructor(coin: { id: number, name: string, symbol: string, price_thb: number }) {
+        this.id = coin.id
         this.name = coin.name
         this.symbol = coin.symbol
-        this.price_thb =coin.price_thb
+        this.price_thb = coin.price_thb
     }
 
     print(): string {
-        
+
         return ` <div class="well well-lg">
         <strong><h1><a href="https://coinmarketcap.com/currencies/${this.id}/">${this.name}</a></h1></strong> <h4> ชื่อย่อ : ${this.symbol}  ราคา : ${this.price_thb} THB</h4>
       </div>`
     }
-   
+
 
 }
 
